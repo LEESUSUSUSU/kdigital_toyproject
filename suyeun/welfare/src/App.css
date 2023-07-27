@@ -1,5 +1,9 @@
+/* Example CSS for centering the content in the .App class */
 .App {
   text-align: center;
 }
 
-
+.button-style {
+  display: flex;
+  
+}
