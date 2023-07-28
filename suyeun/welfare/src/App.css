@@ -9,29 +9,44 @@ body {
 .App {
   text-align: center;
 }
+.App1 {
+ 
+    margin-left: 100px;
+  
+
+}
+.App1 h1 {
+  margin-left: 200px;
+}
 
 /* loginForm.module.css */
 
 .loginpage {
-  max-width: 300px;
-  margin: 0 auto;
-  text-align: left;
-  border: 1px solid #ccc;
-  padding: 20px;
-}
-
-.loginpage h2 {
-  text-align: center;
-  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column; /* Change flex-direction to column for vertical alignment */
+  align-items: center; /* Align items in the center vertically */
 }
 
 .loginpage form {
-  display: flex;
-  flex-direction: column;
+  display: flex; /* Use flexbox to display form elements horizontally */
+  flex-direction: row; /* Set the direction of form elements to row (horizontal) */
+  gap: 10px; /* Add some spacing between the buttons */
+  justify-content: center; /* Center the form elements horizontally */
 }
 
+
+.loginpage h5{
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+} 
+
+
+
 .loginpage label {
-  margin-top: px;
+  margin-top: 10px;
 }
 
 .loginpage input {

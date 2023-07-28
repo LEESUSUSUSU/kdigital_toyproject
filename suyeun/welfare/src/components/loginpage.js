@@ -19,9 +19,9 @@ const LoginForm = () => {
 
   return (
     <div className='loginpage'>
-      <h2>로그인</h2>
+     
       <form onSubmit={handleSubmit}>
-        <label htmlFor="username">사용자 이름:</label>
+        <label htmlFor="username"><h4>사용자 이름</h4></label>
         <input
           type="text"
           id="username"
@@ -29,7 +29,7 @@ const LoginForm = () => {
           onChange={(e) => setUsername(e.target.value)}
           required
         />
-        <label htmlFor="password">비밀번호:</label>
+        <label htmlFor="password"><h4>비밀번호</h4></label>
         <input
           type="password"
           id="password"
@@ -37,8 +37,8 @@ const LoginForm = () => {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button type="submit">로그인</button>
-        <button type="submit">회원가입</button>
+        <button type="submit"><h5>로그인</h5></button>
+        <button type="submit"><h5>회원가입</h5></button>
       </form>
       <p>{message}</p>
     </div>
