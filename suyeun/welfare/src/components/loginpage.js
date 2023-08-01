@@ -1,22 +1,27 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 
 const LoginForm = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
-  const [showSignupModal, setShowSignupModal] = useState(false); // State to control the visibility of the signup modal
+  const [showSignupModal, setShowSignupModal] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('/api/login', {
-        username,
-        password,
+      const response = await fetch('http://localhost:8080/api/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          username,
+          password,
+        }),
       });
 
-      if (response.status === 200) {
+      if (response.ok) {
         setMessage('로그인 성공!');
         // Do something after successful login (e.g., redirect to a new page)
       } else {
@@ -32,18 +37,24 @@ const LoginForm = () => {
 
     const newUsername = document.getElementById('newUsername').value;
     const newPassword = document.getElementById('newPassword').value;
-    const newCall = document.getElementById('newCall').value;
+    const newTel = document.getElementById('newTel').value;
     const newEmail = document.getElementById('newEmail').value;
 
     try {
-      const response = await axios.post('/api/signup', {
-        username: newUsername,
-        password: newPassword,
-        call: newCall,
-        email: newEmail,
+      const response = await fetch('http://localhost:8080/api/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          username: newUsername,
+          password: newPassword,
+          tel: newTel,
+          email: newEmail,
+        }),
       });
 
-      if (response.status === 200) {
+      if (response.ok) {
         setMessage('회원가입 성공!');
         setShowSignupModal(false); // Close the signup modal after successful signup
       } else {
@@ -59,7 +70,7 @@ const LoginForm = () => {
   };
 
   const handleSignupModalClose = () => {
-    setShowSignupModal(false); // Close the signup modal when the close button is clicked
+    setShowSignupModal(false);
   };
 
   return (
@@ -88,7 +99,7 @@ const LoginForm = () => {
       </form>
       <p>{message}</p>
 
-      {showSignupModal && ( // Conditionally render the signup modal
+      {showSignupModal && (
         <div className="modal">
           <div className="modal-content">
             <span className="close" onClick={handleSignupModalClose}>
@@ -97,29 +108,17 @@ const LoginForm = () => {
             <form onSubmit={handleSignupSubmit}>
               <h3>회원가입</h3>
               <label htmlFor="newUsername">아이디</label>
-              <input
-                type="text"
-                id="newUsername"
-                required
-              />
-              <label htmlFor="newPassword">새 비밀번호</label>
-              <input
-                type="password"
-                id="newPassword"
-                required
-              />
-               <label htmlFor="newCall">전화번호</label>
-              <input
-                type="newCall"
-                id="newCall"
-                required
-              />
-                <label htmlFor="newEmail">이메일</label>
-              <input
-                type="newEmail"
-                id="newEmail"
-                required
-              />
+              <input type="text" id="newUsername" required />
+
+              <label htmlFor="newPassword">비밀번호</label>
+              <input type="password" id="newPassword" required />
+
+              <label htmlFor="newTel">전화번호</label>
+              <input type="text" id="newTel" required />
+
+              <label htmlFor="newEmail">이메일</label>
+              <input type="email" id="newEmail" required />
+
               <button type="submit" className="signup-button">회원가입</button>
             </form>
           </div>
