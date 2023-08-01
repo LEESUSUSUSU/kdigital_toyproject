@@ -1,14 +1,22 @@
+
+import React, { useEffect, useState } from 'react';
+import KakaoMap from './KakaoMap';
+
 const Main = () => {
 
 
+  return (
+    <>
+   
+      <KakaoMap/>
+      
+    
+    
+    </>
+  )
 
-    return(
-        <>
-        <h1>Hello World!</h1>
-        </>
-    );
-    
+
 }
-    
-    
+
+
 export default Main;
