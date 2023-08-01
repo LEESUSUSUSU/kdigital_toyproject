@@ -25,8 +25,8 @@
 >>>>>>> b4ee69f77f7d0af3368b53b429d84315dac07419
 
 ## 3. 팀원 
-|<img width="200" alt="image" src="https://avatars.githubusercontent.com/u/129818934?s=400&v=4">|<img width="200" alt="image" src="https://avatars.githubusercontent.com/u/129818797?v=4">|
-| :---------------------------------        : | :-----------------------------------:|
+
+| :--------------------------------- : | :-----------------------------------:|
 |                             
-|                         이수연                              |                           양소윤                  |             
+|                         이수연                              |                           양소윤                 |             
 | [GitHub](https://github.com/LEESUSUSUSU?tab=repositories)  | [GitHub](https://github.com/marine-yang-so-yun)  |
