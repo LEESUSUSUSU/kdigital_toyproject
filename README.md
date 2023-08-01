@@ -23,3 +23,10 @@
 ### img screen
 ![제목 없음-2023-07-25-1721](https://github.com/LEESUSUSUSU/kdigital_toyproject/assets/129818934/78900faa-e252-4dbc-b76e-4a8ee0b5553a)
 >>>>>>> b4ee69f77f7d0af3368b53b429d84315dac07419
+
+## 3. 팀원 
+|<img width="200" alt="image" src="https://avatars.githubusercontent.com/u/129818934?s=400&v=4">|<img width="200" alt="image" src="https://avatars.githubusercontent.com/u/129818797?v=4">|
+| :---------------------------------: | :-----------------------------------:|
+|                             
+|             이수연            |          양소윤             |             
+| [GitHub](https://github.com/LEESUSUSUSU?tab=repositories)  | [GitHub](https://github.com/marine-yang-so-yun)  |
