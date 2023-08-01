@@ -30,18 +30,8 @@ function App() {
       </div>
       <div className="App1">
         <h1>old를 위한 지도</h1>
-        <label htmlFor="searchInput">
-        
-        </label>
-        <input
-          type="text"
-          id="searchInput"
-          value={searchText}
-          onChange={handleSearchChange}
-          placeholder="검색어를 입력하세요..."
-          style={{ width: '300px', height: '40px' }} // Set the width and height here
-        />
-        <KokoMap search={searchText} />
+
+        <KokoMap/>
       </div>
       <footer>
         <div>
