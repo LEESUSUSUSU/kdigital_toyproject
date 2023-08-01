@@ -11,7 +11,7 @@ const LoginForm = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('/api/login', {
+      const response = await fetch('10.125.121.202:8000/idpw', {
         username,
         password,
       });
@@ -36,7 +36,7 @@ const LoginForm = () => {
     const newEmail = document.getElementById('newEmail').value;
 
     try {
-      const response = await axios.post('/api/signup', {
+      const response = await axios.post('10.125.121.202/api/signup', {
         username: newUsername,
         password: newPassword,
         call: newCall,
