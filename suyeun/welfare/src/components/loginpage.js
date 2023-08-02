@@ -11,8 +11,31 @@ const LoginForm = () => {
     setShowLoginModal(true);
   };
 
-  const handleLoginModalClose = () => {
-    setShowLoginModal(false);
+  const handleSignupSubmit = async (e) => {
+    e.preventDefault();
+
+    const newUsername = document.getElementById('newUsername').value;
+    const newPassword = document.getElementById('newPassword').value;
+    const newCall = document.getElementById('newCall').value;
+    const newEmail = document.getElementById('newEmail').value;
+
+    try {
+      const response = await axios.post('/api/signup', {
+        username: newUsername,
+        password: newPassword,
+        call: newCall,
+        email: newEmail,
+      });
+
+      if (response.status === 200) {
+        setMessage('회원가입 성공!');
+        setShowSignupModal(false); // Close the signup modal after successful signup
+      } else {
+        setMessage('회원가입 실패. 서버 오류가 발생했습니다.');
+      }
+    } catch (error) {
+      setMessage('회원가입 실패. 서버 오류가 발생했습니다.');
+    }
   };
 
   const handleSignupModalOpen = () => {

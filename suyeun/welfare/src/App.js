@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import KokoMap from './components/KokoMap';
+import KakaoMap from './components/KakaoMap';
 import Main from './components/Main';
 import Loginpage from './components/loginpage';
 import './App.css';
@@ -29,9 +29,9 @@ function App() {
         <Loginpage />
       </div>
       <div className="App1">
-        <h1>old를 위한 지도</h1>
+        
 
-        <KokoMap/>
+        <KakaoMap/>
       </div>
       <footer>
         <div>
