@@ -5,8 +5,8 @@ function Main() {
 
 
   useEffect(() => {
-    fetch('http://10.125.121.201:8080/member1', { method: 'GET' })
-    //fetch('http://localhost:8080')
+    //fetch('http://10.125.121.201:8080/member1', { method: 'GET' })
+    fetch('http://localhost:8080/main')
       .then(response => response.json())
       .then(data => console.log(data))
       .catch(error => console.error('Error fetching data:', error));

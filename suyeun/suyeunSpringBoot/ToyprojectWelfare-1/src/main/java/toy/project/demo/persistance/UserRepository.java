@@ -7,4 +7,6 @@ import toy.project.demo.domain.member1;
 
 public interface UserRepository extends JpaRepository<member1, String> {
     List<member1> findAll();
+    
+    
 }
