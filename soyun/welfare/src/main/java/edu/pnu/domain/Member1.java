@@ -19,7 +19,7 @@ import lombok.ToString;
 public class Member1 {
 
 	@Id
-	private Integer seq;
+	private int seq;
 	private String mb_name;
 	private String mb_address;
 	private String mb_tel;
