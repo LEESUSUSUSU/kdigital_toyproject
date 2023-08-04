@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import LoginModal from './LoginModal';
 import SignupModal from './SignupModal';
 import axios from 'axios';
-
+import './LoginCss.css';
 
 const LoginForm = () => {
   const [showLoginModal, setShowLoginModal] = useState(false);
@@ -70,12 +70,14 @@ const LoginForm = () => {
         </button>
       ) : (
         <>
+          <div>
           <button type="button" className="login-button" onClick={handleLoginModalOpen}>
             로그인
           </button>
           <button type="button" className="signup-button" onClick={handleSignupModalOpen}>
             회원가입
           </button>
+          </div>
         </>
       )}
       

@@ -5,6 +5,7 @@ const LoginForm = () => {
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
   const [showSignupModal, setShowSignupModal] = useState(false);
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,6 +24,7 @@ const LoginForm = () => {
 
       if (response.ok) {
         setMessage('로그인 성공!');
+        
         // Do something after successful login (e.g., redirect to a new page)
       } else {
         setMessage('로그인 실패. 올바른 정보를 입력하세요.');
@@ -98,7 +100,7 @@ const LoginForm = () => {
         </button>
       </form>
       <p>{message}</p>
-
+      
       {showSignupModal && (
         <div className="modal">
           <div className="modal-content">

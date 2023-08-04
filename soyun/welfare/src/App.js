@@ -1,10 +1,11 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import React, { useState } from 'react';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import KakaoMap from './components/KakaoMap';
-import Main from './components/Main';
-import Loginpage from './components/loginpage';
+import {RecoilRoot} from 'recoil';
+
+import WriteReview from './components/WriteReview';
+import MainFrame from './components/MainFrame';
 import './App.css';
+
 
 function App() {
   const [searchText, setSearchText] = useState('');
@@ -14,31 +15,17 @@ function App() {
   };
 
   return (
-    <main>
-      <header>
-        <div className="App">
-          <AppBar position="static">
-            <Toolbar style={{ backgroundColor: "#74A629" }}>
-              <h1>노인을 위한 나라</h1>
-            </Toolbar>
-          </AppBar>
-        </div>
-      </header>
-      <div>
-        <Main />
-        <Loginpage />
-      </div>
-      <div className="App1">
-        
-
-        <KakaoMap/>
-      </div>
-      <footer>
-        <div>
-          <h2>바닥</h2>
-        </div>
-      </footer>
+    <RecoilRoot>
+    <BrowserRouter>
+    <main className="container"> 
+        <Routes>
+          <Route path='/' element={<MainFrame />} />
+          <Route path='/WriteReview/:name' element={<WriteReview />} />
+        </Routes> 
     </main>
+    </BrowserRouter>
+    </RecoilRoot>
+    
   );
 }
 

@@ -1,0 +1,99 @@
+body {
+    background-image: url(../icon/—Pngtree—green\ backgrounds\ wallpapers\ photos\ graphics_1444977.jpg);
+    background-repeat: no-repeat;
+    /* background-position: top center; */
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  
+  .App {
+    text-align: center;
+  }
+  .App1 {
+   
+      margin-left: 100px;
+    
+  
+  }
+  .App1 h1 {
+    margin-left: 200px;
+  }
+  
+  /* loginForm.module.css */
+  
+  .loginpage {
+    display: flex;
+    flex-direction: column; /* Change flex-direction to column for vertical alignment */
+    align-items: center; /* Align items in the center vertically */
+  }
+  
+  .loginpage form {
+    display: flex; /* Use flexbox to display form elements horizontally */
+    flex-direction: row; /* Set the direction of form elements to row (horizontal) */
+    gap: 5px; /* Add some spacing between the buttons */
+    justify-content: center; /* Center the form elements horizontally */
+  }
+  
+  
+  .loginpage h5{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+  } 
+  
+  
+  /* Assuming this is your CSS */
+  .loginpage label {
+    margin-bottom: 80px;
+  }
+  
+  .loginpage input {
+    padding: 10px; /* Add some padding to the input fields */
+    margin-top: 10px;
+    border: 1px solid #B5D99C;
+    border-radius: 5px;
+    /* Add the desired height here */
+    height: 50px; /* Change this value to adjust the height */
+  }
+  
+  .loginpage button {
+    padding: 10px 20px; /* Add padding for horizontal and vertical spacing */
+    margin-top: 10px;
+    background-color: #D7F205;
+    color: black;
+    border: none;
+    border-radius: 5px; /* Increase the border radius for rounded corners */
+    cursor: pointer;
+    /* Add box-shadow for a subtle 3D effect */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* Add transition for a smoother hover effect */
+    transition: background-color 0.3s ease;
+  }
+  
+  .loginpage button[type='submit'] {
+    background-color: #B5D99C;
+    margin-bottom: 50px; /* Reduce the margin-bottom for spacing */
+  }
+  
+  /* Add hover effect for buttons */
+  .loginpage button:hover {
+    background-color: #C4E44A; /* Change the color on hover */
+  }
+  
+  .modal {
+  
+    display: flex;
+    flex-direction: column; /* Change flex-direction to column for vertical alignment */
+    align-items: center; /* Align items in the center vertically */
+    padding: auto;
+  
+  
+  }
+  
+  .modal form{
+    display: flex;
+    flex-direction: column; /* Change flex-direction to column for vertical alignment */
+    align-items: center; /* Align items in the center vertically */
+  }

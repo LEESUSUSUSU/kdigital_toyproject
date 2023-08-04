@@ -59,7 +59,8 @@ const SignupModal = ({ showModal, closeModal }) => {
             &times;
           </span>
           <form onSubmit={handleSignupSubmit}>
-            <h3>회원가입</h3>
+            <div>
+            &nbsp;&nbsp;/&nbsp;회원가입: &nbsp;&nbsp;
             <label htmlFor="newUsername">아이디</label>
             <input
               type="text"
@@ -99,7 +100,9 @@ const SignupModal = ({ showModal, closeModal }) => {
             <button type="submit" className="signup-button">
               회원가입
             </button>
+            </div>
           </form>
+          
           <p>{message}</p>
         </div>
       </div>

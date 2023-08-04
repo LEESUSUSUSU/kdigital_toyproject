@@ -1,0 +1,32 @@
+.infoModal  {
+ 
+    background-color: rgb(171, 206, 162);
+    flex-direction: column;
+    text-align:right;
+    
+}
+
+.nameOfWelfare  {
+    font-size: xx-large;
+    text-align:center;
+    height:40px;
+}
+
+.infoOfWelfare  {
+    text-align:center;
+    height: 200px;
+}
+
+.writeReviewButton  {
+    padding: 5px 20px;
+}
+
+.upperSideOfModal   {
+    height:300px;
+}
+
+.loginMessage   {
+    font-size:15px;
+}
+
+
