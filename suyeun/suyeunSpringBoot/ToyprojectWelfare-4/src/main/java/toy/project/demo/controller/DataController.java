@@ -4,75 +4,64 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Collections;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import toy.project.demo.domain.memberid;
-import toy.project.demo.persistance.MemberRepository;
-import toy.project.demo.persistance.MembersRepository;
-import toy.project.demo.persistance.UserRepository;
+import toy.project.demo.domain.welfare;
+import toy.project.demo.persistance.WelfareRepository;
 
 @RestController
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class DataController {
 
 	@Autowired
-	private UserRepository userRepository;
+	private WelfareRepository welfareRepository;
 
-	@Autowired
-	private MembersRepository membersRepository;
+	@GetMapping("/")
+	public String home() {
+		List<welfare> members = welfareRepository.findAll();
 
-	@Autowired
-	private MemberRepository memberRepository;
+		return "home";
+	}
 
+	// 이름 , 경도 , 위도
 	@GetMapping("/main/members")
 	public List<Map<String, Object>> getAllMembers() {
-		List<Object[]> combinedDataList = userRepository.findAllCombinedData();
+		List<Object[]> Data = welfareRepository.welfareData();
 
 		List<Map<String, Object>> result = new ArrayList<>();
-		for (Object[] row : combinedDataList) {
+		for (Object[] row : Data) {
 			Map<String, Object> memberData = new HashMap<>();
-			memberData.put("name", row[0]);
-			memberData.put("longitude", row[1]);
-			memberData.put("latitude", row[2]);
+			memberData.put("sw_name", row[0]);
+			memberData.put("sw_longitude", row[1]);
+			memberData.put("sw_latitude", row[2]);
 			result.add(memberData);
 		}
 
 		return result;
 	}
-	
-	@PostMapping("/searchName")
-    public ResponseEntity<List<String>> searchName(@RequestBody Map<String, String> request) {
-        String name = request.get("name"); // Assuming the JSON data contains a "name" field
 
-        if (name == null || name.isEmpty()) {
-            return ResponseEntity.badRequest().body(Collections.singletonList("Name cannot be empty."));
-        }
-
-        List<Object[]> combinedDataList = memberRepository.findAllCombinedData(name);
-
-        List<Map<String, Object>> result = new ArrayList<>();
-        for (Object[] row : combinedDataList) {
-            Map<String, Object> memberData = new HashMap<>();
-            memberData.put("seq", row[0]);
-            memberData.put("name", row[1]);
-            memberData.put("maddress", row[2]);
-            memberData.put("tel", row[3]);
-            memberData.put("domain", row[4]);
-            memberData.put("longitude", row[5]);
-            memberData.put("latitude", row[6]);
-            result.add(memberData);
-        }  
-        return new ResponseEntity<>(result, HttpStatus.OK);
-    }
-}
-
-
+	// 검색
+	 @GetMapping("/main/search/{keyword}")
+	    public List<Map<String, Object>> searchWelfare(@PathVariable String keyword) {
+	        List<Object[]> data = welfareRepository.searchData(keyword);
+	        List<Map<String, Object>> search = new ArrayList<>();
+	        for (Object[] row : data) {
+	            Map<String, Object> searchData = new HashMap<>();
+	            searchData.put("sw_name", row[1]);
+	            searchData.put("sw_address", row[2]);
+	            searchData.put("sw_tel", row[3]);
+	            searchData.put("sw_domain", row[4]);
+	            searchData.put("sw_longitude", row[5]);
+	            searchData.put("sw_latitude", row[6]);
+	            search.add(searchData);
+	        }
+	        return search;
+	    }
+	 
+	 
+	}

@@ -17,7 +17,7 @@ import lombok.ToString;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class memberid {
+public class member {
     @Id
     private String username;
     @Column(length = 255) // Use a smaller length (e.g., 191) that works with your application

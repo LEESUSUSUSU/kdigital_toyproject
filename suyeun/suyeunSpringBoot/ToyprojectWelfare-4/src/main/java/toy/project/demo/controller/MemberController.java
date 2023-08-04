@@ -10,8 +10,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import toy.project.demo.domain.memberid;
-import toy.project.demo.persistance.MemberIdRepository;
+import toy.project.demo.domain.member;
+
+import toy.project.demo.persistance.MemberRepository;
 
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -20,14 +21,14 @@ import toy.project.demo.persistance.MemberIdRepository;
 public class MemberController {
 
     @Autowired
-    private MemberIdRepository memberIdRepository;
+    private MemberRepository memberIdRepository;
     
     @Autowired
     private BCryptPasswordEncoder encoder;
     
 
     @PostMapping("/signup")
-    public ResponseEntity<String> signUp(@RequestBody memberid newMember) {
+    public ResponseEntity<String> signUp(@RequestBody member newMember) {
         try {
             // Check if the username already exists in the database
             if (memberIdRepository.existsByUsername(newMember.getUsername())) {
@@ -43,11 +44,11 @@ public class MemberController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody memberid loginRequest) {
+    public ResponseEntity<String> login(@RequestBody member loginRequest) {
         try {
         
         
-            memberid member = memberIdRepository.findByUsername(loginRequest.getUsername());
+            member member = memberIdRepository.findByUsername(loginRequest.getUsername());
             if (member != null) {
             	if (encoder.matches(loginRequest.getPassword(), member.getPassword()))
             		return ResponseEntity.ok("Login successful!");
