@@ -1,5 +1,7 @@
 package toy.project.demo.domain;
 
+
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -28,10 +30,13 @@ public class Review {
     private Integer id;
     private String username;
     private String notename;
-    private String notePass; // Changed variable name from 'NotePass' to 'notePass'
+    private String notePass;
+    private String sw_name;
     @Lob
+    @Column(columnDefinition = "MEDIUMBLOB")
     private byte[] image;
     private String note;
+ 
 
     
 

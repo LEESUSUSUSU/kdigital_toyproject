@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import toy.project.demo.Util.JwtTokenUtil;
 import toy.project.demo.domain.member;
-
 import toy.project.demo.persistance.MemberRepository;
 
 
@@ -25,6 +25,9 @@ public class MemberController {
     
     @Autowired
     private BCryptPasswordEncoder encoder;
+    
+    @Autowired
+    private JwtTokenUtil jwtTokenUtil;
     
 
     @PostMapping("/signup")
@@ -42,18 +45,36 @@ public class MemberController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Signup failed.");
         }
     }
-
+//
+//    @PostMapping("/login")
+//    public ResponseEntity<String> login(@RequestBody member loginRequest) {
+//        try {
+//        
+//        
+//            member member = memberIdRepository.findByUsername(loginRequest.getUsername());
+//            if (member != null) {
+//            	if (encoder.matches(loginRequest.getPassword(), member.getPassword()))
+//            		return ResponseEntity.ok("Login successful!");
+//            	else 
+//            		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("not matches password");
+//            } else {
+//                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials.");
+//            }
+//        } catch (Exception e) {
+//            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Login failed.");
+//        }
+//    }
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestBody member loginRequest) {
         try {
-        
-        
             member member = memberIdRepository.findByUsername(loginRequest.getUsername());
             if (member != null) {
-            	if (encoder.matches(loginRequest.getPassword(), member.getPassword()))
-            		return ResponseEntity.ok("Login successful!");
-            	else 
-            		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("not matches password");
+                if (encoder.matches(loginRequest.getPassword(), member.getPassword())) {
+                    String token = jwtTokenUtil.generateToken(member.getUsername());
+                    return ResponseEntity.ok(token);
+                } else {
+                    return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials.");
+                }
             } else {
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials.");
             }

@@ -1,20 +1,27 @@
 package toy.project.demo.controller;
 
 import java.io.IOException;
+import java.util.Base64;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import toy.project.demo.domain.Review;
+import toy.project.demo.persistance.ReviewRepository.InvalidPasswordException;
+import toy.project.demo.persistance.ReviewRepository.ReviewNotFoundException;
 import toy.project.demo.service.ReviewService;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -22,27 +29,93 @@ import toy.project.demo.service.ReviewService;
 @RequestMapping("/main")
 public class ReviewController {
 
-    @Autowired
-    ReviewService reviewService;
-
-    @PostMapping("/createReview")
-    public Review insertReview(@RequestBody Review review)  {
-        return reviewService.insertReview(review.getUsername(), review.getNotename(), review.getImage(), review.getNotePass(), review.getNote());
+	@Autowired
+	ReviewService reviewService;
+	
+	
+	@GetMapping("/ShowReview/{seq}")
+	@PreAuthorize("hasRole('ROLE_USER')")
+    public ResponseEntity<Review> showReview(@PathVariable Integer seq) {
+        try {
+            Review review = reviewService.showReview(seq);
+            return ResponseEntity.ok(review);
+        } catch (ReviewNotFoundException e) {
+            return ResponseEntity.notFound().build();
+        }
     }
+	
+//	   @PostMapping("/createReview")
+//	   @PreAuthorize("hasRole('ROLE_USER')")
+//	   public ResponseEntity<?> insertReview(
+//	           @RequestParam String username,
+//	           @RequestParam String notename,
+//	           @RequestParam String notePass,
+//	           @RequestParam String note,
+//	           @RequestParam String sw_name
+//	           //@RequestPart("image") MultipartFile image
+//	   ) throws IOException {
+//	       
+//	      
+//	      Review review = reviewService.insertReview(username, notename, notePass, note, sw_name);
+//	      //return ResponseEntity.ok(review);
+//	      return ResponseEntity.ok("OK");
+//	   }
+	
+	
+	@PostMapping("/createReview")
+	@PreAuthorize("hasRole('ROLE_USER')")
+	public Review insertReview(
+	        @RequestParam String username,
+	        @RequestParam String notename,
+	        @RequestPart("image") MultipartFile image,
+	        @RequestParam String notePass,
+	        @RequestParam String note,
+	        @RequestParam String sw_name
+	) throws IOException {
+	    
+	   
+	return reviewService.insertReview(username, notename, image, notePass, note, sw_name);
+	}
+	
+	
+	@PutMapping("/updateReview")
+	@PreAuthorize("hasRole('ROLE_USER')")
+	public Review updateReview(
+	        @RequestParam Integer id,
+	        @RequestParam String notename,
+	        @RequestPart("image") MultipartFile image,
+	        @RequestParam String notePass,
+	        @RequestParam String note
+	) throws IOException {
+	    return reviewService.updateReview(id, notename, image, notePass, note);
+	}
+	
+	
+	
+	
 
-    @PostMapping("/updateReview")
-    public Review updateReview(@RequestParam Integer seq, @RequestParam String username, @RequestParam String notename,
-            @RequestParam MultipartFile image, @RequestParam String notepass, @RequestParam String note) throws IOException {
-        return reviewService.updateReview(seq, username, notename, image.getBytes(), notepass, note);
-    }
+	
+	
 
-    @DeleteMapping("/deleteReview") // Use DeleteMapping instead of PostMapping
-    public void deleteReview(@RequestBody Review review) {
-        reviewService.deleteReview(review.getId(),review.getNotePass());
-    }
+	
+//	@PostMapping("/createReview")
+//	@PreAuthorize("hasRole('ROLE_USER')")
+//	public Review insertReview(@RequestPart("review") Review review, @RequestPart("image") MultipartFile image) throws IOException {
+//	    return reviewService.insertReview(review.getUsername(), review.getNotename(), image,
+//	            review.getNotePass(), review.getNote(), review.getSw_name());
+//	}
+//
+//	
+//
+//	@PutMapping("/updateReview")
+//	public Review updateReview(@RequestPart("review") Review review, @RequestPart("image") MultipartFile image) throws IOException {
+//		return reviewService.updateReview(review.getId(), review.getNotename(), image, review.getNotePass(),
+//				review.getNote());
+//	}
+//
+	@DeleteMapping("/deleteReview") // Use DeleteMapping instead of PostMapping
+	public Review deleteReview(@RequestBody Review review) throws ReviewNotFoundException, InvalidPasswordException {
+		return reviewService.deleteReview(review.getId(), review.getNotePass());
+	}
+	}
 
-    @GetMapping("/review/{seq}")
-    public Review getReview(@PathVariable Integer seq) {
-        return reviewService.getReviewById(seq);
-    }
-}

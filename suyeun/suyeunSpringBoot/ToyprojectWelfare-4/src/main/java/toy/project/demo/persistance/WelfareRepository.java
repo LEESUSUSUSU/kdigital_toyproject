@@ -15,4 +15,11 @@ public interface WelfareRepository extends JpaRepository<welfare, String> {
 	    
 	    @Query(value = "select * from welfare where sw_name = :keyword", nativeQuery = true)
 	    List<Object[]> searchData(@Param("keyword") String paramValue);
+	    
+	    @Query(value = "SELECT seq, username,notename FROM review WHERE sw_name = :keyword ORDER BY seq DESC LIMIT 5", nativeQuery = true)
+	    List<Object[]> reviewData(@Param("keyword") String paramValue);
+	    
+	    @Query(value = "SELECT * FROM Review  WHERE seq = :seq AND sw_name = :keyword",nativeQuery = true)
+	    List<Object[]> dataAll(@Param("seq") Integer seq, @Param("keyword") String keyword);
+	    
 	}
