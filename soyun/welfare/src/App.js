@@ -4,6 +4,8 @@ import {RecoilRoot} from 'recoil';
 
 import WriteReview from './components/WriteReview';
 import MainFrame from './components/MainFrame';
+import ShowReview from './components/ShowReview';
+import DeletePost from './components/DeletePost';
 import './App.css';
 
 
@@ -20,7 +22,9 @@ function App() {
     <main className="container"> 
         <Routes>
           <Route path='/' element={<MainFrame />} />
-          <Route path='/WriteReview/:name' element={<WriteReview />} />
+          <Route path='/WriteReview/:name/:username' element={<WriteReview />} />
+          <Route path='/ShowReview/:welfareName/:seq' element={<ShowReview />} />
+          <Route path='/DeletePost/:seq' element={<DeletePost />} />
         </Routes> 
     </main>
     </BrowserRouter>

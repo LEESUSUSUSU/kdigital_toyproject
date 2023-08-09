@@ -1,7 +1,6 @@
 body {
     background-image: url(../icon/—Pngtree—green\ backgrounds\ wallpapers\ photos\ graphics_1444977.jpg);
     background-repeat: no-repeat;
-    /* background-position: top center; */
     background-size: cover;
     background-attachment: fixed;
   }
@@ -96,4 +95,15 @@ body {
     display: flex;
     flex-direction: column; /* Change flex-direction to column for vertical alignment */
     align-items: center; /* Align items in the center vertically */
+  }
+
+  footer  {
+    flex-direction: column;
+    align-items:center;
+    text-align:center;
+    font-family:'한컴산뜻돋움';
+  }
+
+  footer div{
+    padding:10px;
   }

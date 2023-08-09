@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import './InfoModalCss.css';
 import BoardOfWelfare from './BoardOfWelfare';
-import {WriteNameAtoms} from './WriteNameAtoms';
-import {LoginAtoms} from './LoginAtoms'
+import {WriteNameAtoms} from './Atoms/WriteNameAtoms';
+import {LoginAtoms} from './Atoms/LoginAtoms'
 import {useRecoilState, useRecoilValue} from 'recoil';
-
+import {UserInfoAtoms} from './Atoms/UserInfoAtoms';
 
 const InfoModal = (props) => {
 
     const loginState = useRecoilValue(LoginAtoms);
     const [info, setInfo] = useState([]);
-    const [isOpen, setIsOpen] = useState(true);
     const [writeName, setWriteName] = useRecoilState(WriteNameAtoms);
+    const username = useRecoilValue(UserInfoAtoms);
 
     var name = props.name
 
@@ -54,7 +54,7 @@ useEffect(()=> {
 const openPopup = () => {
   
   var option =  "width = 600, height = 800, top = 100, left = 200, location = no"
-  window.open(`/WriteReview/${name}`, "이름", option)
+  window.open(`/WriteReview/${name}/${username}`, "이름", option)
 
 };
 
@@ -94,7 +94,7 @@ return (
         }
       </div>
       
-      <BoardOfWelfare />
+      <BoardOfWelfare name={name}/>
     </div>
     
     </>

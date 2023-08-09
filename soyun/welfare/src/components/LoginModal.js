@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import {LoginAtoms} from './LoginAtoms'
+import {LoginAtoms} from './Atoms/LoginAtoms'
 import { useRecoilState } from "recoil";
+import {UserInfoAtoms} from './Atoms/UserInfoAtoms';
 
 const LoginModal = ({ showModal, closeModal }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
   const [loginState, setLoginState] = useRecoilState(LoginAtoms);
+  const [userInfo, setUserInfo] = useRecoilState(UserInfoAtoms);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -31,6 +33,7 @@ const LoginModal = ({ showModal, closeModal }) => {
       if (response.ok) {
         setMessage(`Hello, ${username} 어서오세요!`);
         setLoginState(1);
+        setUserInfo(username);
         console.log("loginState:", loginState)
         closeModal();
       } else {

@@ -49,7 +49,7 @@ const MainFrame = () => {
         </div>
         <footer>
           <div>
-            <h2>바닥</h2>
+          ☘ made by Suyeon Lee, Soyun Yang ☘
           </div>
         </footer>
       </main>
