@@ -31,9 +31,7 @@ const BoardOfWelfare = (props) => {
     }, [welfareName])
 
 
-    const test = (welfareName, seq) => {
-
-      console.log("Hello",welfareName, seq)
+    const showPost = (welfareName, seq) => {
       var option =  "width = 600, height = 800, top = 100, left = 200, location = no"
       window.open(`/ShowReview/${welfareName}/${seq}`, "이름", option)
     }
@@ -44,18 +42,24 @@ const BoardOfWelfare = (props) => {
       
     }
 
+    const updatePost = (seq) => {
+      var option =  "width = 600, height = 800, top = 100, left = 200, location = no"
+      window.open(`/UpdatePost/${seq}/${welfareName}/${username}`, "이름", option)
+    }
+
     return (
         <>
         <div className="boardBackground">
             {welfareName}의 게시글목록
+            <br/><br/>
             {list.length == 0?
             <div>게시글이 없습니다</div>:
             <div>
               {Array.from(list).map((item, idx) => {
                 return(
                   <>
-                  <div><a href="#" onClick={()=>{test(welfareName, item.seq)}}>{item.notename}&nbsp;-&nbsp; 작성자: &nbsp; {item.username}</a>
-                  {/* &nbsp; <button onClick={() => {updatePost(item.seq)}}>수정</button> */}
+                  <div className="boardBackgroundDetail"><a href="#" onClick={()=>{showPost(welfareName, item.seq)}}>{item.notename}&nbsp;-&nbsp; 작성자: &nbsp; {item.username}</a>
+                  &nbsp; <button onClick={() => {updatePost(item.seq)}}>수정</button> 
                   &nbsp; <button onClick={() => {deletePost(item.seq)}}>삭제</button>
 
                   </div>

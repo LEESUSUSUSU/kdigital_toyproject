@@ -34,10 +34,10 @@ const ShowReview = () => {
     return (
         <>
         <div className="showReview">
-          <div>제목:&nbsp;{text.notename}</div>
-          <div>시설이름:&nbsp;{text.sw_name}</div>
-          <div>사용자명:&nbsp;{text.username}</div>
-          <div>내용:&nbsp;{text.note}</div>
+          <div className="showReviewElement">제목:&nbsp;{text.notename}</div>
+          <div className="showReviewElement">시설이름:&nbsp;{text.sw_name}</div>
+          <div className="showReviewElement">사용자명:&nbsp;{text.username}</div>
+          <div className="showReviewElement">내용:</div><br /><div className="showReviewDetail">&nbsp;{text.note}</div>
         </div>
         </>
     )

@@ -1,7 +1,7 @@
 import {useParams} from "react-router-dom";
 import './WriteReviewCss.css';
 import {useState, useEffect} from "react";
-import {useDropzone} from 'react-dropzone';
+
 
 
 const WriteReview = () => {
@@ -11,11 +11,6 @@ const WriteReview = () => {
 
     const [uploadedFiles, setUploadedFiles] = useState([]);
 
-    const onDrop = (acceptedFiles) => {
-      setUploadedFiles((prevFiles) => [...prevFiles, ...acceptedFiles]);
-    };
-  
-    const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
     const submitControl = async (e) => {
         e.preventDefault();
@@ -37,17 +32,15 @@ const WriteReview = () => {
               username: username,
               notename: newNotename,
               sw_name: welfareName,
-              notepass: newNotepass,
-              note: newNote,
+              notePass: newNotepass,
+              note: newNote
             }),
           });
     
           if (response.ok) {
             console.log("입력성공")
-            console.log(response)
-            console.log(username)
-            console.log(newNotename)
-            //window.close();
+            window.close()
+            
           } else {
             console.log("입력실패. 서버오류발생1")
           }
@@ -55,22 +48,6 @@ const WriteReview = () => {
             console.log("입력실패. 서버오류발생2")
         }
       };
-
-      const dropzoneStyle = {
-        border: '2px dashed #ccc',
-        borderRadius: '4px',
-        padding: '20px',
-        textAlign: 'center',
-        cursor: 'pointer',
-      };
-      
-      const imageStyle = {
-        width: '200px',
-        height: '200px',
-        objectFit: 'cover',
-        margin: '10px',
-      };
-
 
     
     return(

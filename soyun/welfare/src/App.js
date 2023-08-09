@@ -6,6 +6,8 @@ import WriteReview from './components/WriteReview';
 import MainFrame from './components/MainFrame';
 import ShowReview from './components/ShowReview';
 import DeletePost from './components/DeletePost';
+import UpdatePost from './components/UpdatePost';
+
 import './App.css';
 
 
@@ -25,6 +27,7 @@ function App() {
           <Route path='/WriteReview/:name/:username' element={<WriteReview />} />
           <Route path='/ShowReview/:welfareName/:seq' element={<ShowReview />} />
           <Route path='/DeletePost/:seq' element={<DeletePost />} />
+          <Route path='/UpdatePost/:seq/:welfareName/:username' element={<UpdatePost />} />
         </Routes> 
     </main>
     </BrowserRouter>

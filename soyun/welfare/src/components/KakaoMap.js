@@ -43,7 +43,7 @@ function KakaoMap (props) {
           var position_temp = new kakao.maps.LatLng(members[i].sw_latitude, members[i].sw_longitude)
           
           var imageSize = new kakao.maps.Size(24, 35)
-          var markerImage = new kakao.maps.MarkerImage('icon/star.png', imageSize)
+          var markerImage = new kakao.maps.MarkerImage('icon/threeleafclover.png', imageSize)
 
 
           if (i < 35) {

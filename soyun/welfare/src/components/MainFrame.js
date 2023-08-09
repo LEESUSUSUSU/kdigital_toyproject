@@ -27,12 +27,12 @@ const MainFrame = () => {
     
       <RecoilRoot>
       
-      <main>
+      <main className="mainBody">
         <header>
           <div className="App">
             <AppBar position="static">
               <Toolbar style={{ backgroundColor: "#74A629" }}>
-                <h1>노인을 위한 나라</h1>
+                <h1 className="mainTitle">노인을 위한 나라 </h1>&nbsp;
                 <Loginpage />
               </Toolbar>            
             </AppBar>

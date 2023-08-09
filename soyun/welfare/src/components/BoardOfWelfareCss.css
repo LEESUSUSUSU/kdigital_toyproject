@@ -5,3 +5,11 @@
     margin:15px;
 
 }
+
+.boardBackgroundDetail:hover    {
+    background-color:rgb(171, 206, 162)
+}
+
+.boardBackgroundTitle   {
+    text-align:center;
+}
