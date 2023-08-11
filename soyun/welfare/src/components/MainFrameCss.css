@@ -7,9 +7,28 @@
   
   .mainTitle  {
     font-family:"한컴산뜻돋움";
+    display:flex;
+    flex-direction:row;
+    text-align:center;
   }
   .App {
     text-align: center;
+    display:flex;
+    justify-content: flex-start;
+  }
+  .appbar {
+    display:flex;
+    justify-content: flex-start;
+    margin-right:auto;
+  }
+
+  .toolbar  {
+    display:flex;
+    justify-content:flex-start;
+  }
+
+  .loginpage  {
+    margin-right:auto;
   }
   .App1 {
    
@@ -25,15 +44,14 @@
   
   .loginpage {
     display: flex;
-    flex-direction: column; /* Change flex-direction to column for vertical alignment */
-    align-items: center; /* Align items in the center vertically */
+    flex-direction: column; 
+    justify-content: left; 
   }
   
   .loginpage form {
-    display: flex; /* Use flexbox to display form elements horizontally */
-    flex-direction: row; /* Set the direction of form elements to row (horizontal) */
-    gap: 5px; /* Add some spacing between the buttons */
-    justify-content: center; /* Center the form elements horizontally */
+    display: flex; 
+    flex-direction: row; 
+    gap: 5px; 
   }
   
   

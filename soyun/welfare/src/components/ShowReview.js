@@ -31,6 +31,11 @@ const ShowReview = () => {
         
     }, [])
 
+    const closeModal = () => {
+
+      window.close();
+    }
+
     return (
         <>
         <div className="showReview">
@@ -38,6 +43,7 @@ const ShowReview = () => {
           <div className="showReviewElement">시설이름:&nbsp;{text.sw_name}</div>
           <div className="showReviewElement">사용자명:&nbsp;{text.username}</div>
           <div className="showReviewElement">내용:</div><br /><div className="showReviewDetail">&nbsp;{text.note}</div>
+          <button className="closeButton" onClick={closeModal}>닫기</button>
         </div>
         </>
     )

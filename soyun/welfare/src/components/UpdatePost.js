@@ -49,6 +49,7 @@ const UpdatePost = () => {
 
     return(
         <>
+        
         <div className="WriteReviewWindow">
             <div>게시글 작성 시 입력하였던 비밀번호를 입력하세요.</div>
             <div>비밀번호:&nbsp;<input type="password" id="newNotepass"></input></div>

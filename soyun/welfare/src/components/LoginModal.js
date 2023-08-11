@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import {LoginAtoms} from './Atoms/LoginAtoms'
-import { useRecoilState } from "recoil";
+import {useRecoilState, useRecoilValue} from 'recoil';
+import {LoginAtoms} from './Atoms/LoginAtoms';
 import {UserInfoAtoms} from './Atoms/UserInfoAtoms';
 
 const LoginModal = ({ showModal, closeModal }) => {
@@ -34,7 +34,6 @@ const LoginModal = ({ showModal, closeModal }) => {
         setMessage(`Hello, ${username} 어서오세요!`);
         setLoginState(1);
         setUserInfo(username);
-        console.log("loginState:", loginState)
         closeModal();
       } else {
         setMessage('로그인 실패. 올바른 정보를 입력하세요.');

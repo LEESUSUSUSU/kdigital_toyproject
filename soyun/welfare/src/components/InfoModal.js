@@ -5,13 +5,17 @@ import {WriteNameAtoms} from './Atoms/WriteNameAtoms';
 import {LoginAtoms} from './Atoms/LoginAtoms'
 import {useRecoilState, useRecoilValue} from 'recoil';
 import {UserInfoAtoms} from './Atoms/UserInfoAtoms';
+//import NewLoginForm from './NewLoginForm';
+
 
 const InfoModal = (props) => {
 
     const loginState = useRecoilValue(LoginAtoms);
     const [info, setInfo] = useState([]);
     const [writeName, setWriteName] = useRecoilState(WriteNameAtoms);
+    const [domain, setDomain] = useState("");
     const username = useRecoilValue(UserInfoAtoms);
+    
 
     var name = props.name
 
@@ -25,6 +29,9 @@ const InfoModal = (props) => {
           .then((response) => response.json())
           .then((data) => {
             setInfo(data);
+            setDomain("http://" + data[0].sw_domain)
+            
+            
           })
           .catch((error) => {
            
@@ -49,6 +56,8 @@ useEffect(()=> {
 
 
 
+
+
 // 글쓰기 팝업창 띄우는 코드
 
 const openPopup = () => {
@@ -63,6 +72,7 @@ return (
     <>
     <div className="infoModal">
       &nbsp;&nbsp;
+      {/* <NewLoginForm /> */}
       <div className="upperSideOfModal">
         
         {(info[0]!= null)?
@@ -74,7 +84,7 @@ return (
           <div>주소:{info[0].sw_address}</div>
           <div>전화번호:{info[0].sw_tel}</div>
           {info[0].sw_domain != ""?
-          (<div>홈페이지:<a className="domain" href={info[0].sw_domain}>{info[0].sw_domain}</a></div>):
+          (<div>홈페이지:<a className="domain" href={domain}>{info[0].sw_domain}</a></div>):
           (<></>)}
           </div>
           </>

@@ -6,7 +6,10 @@ import './LoginCss.css';
 import {LoginAtoms} from './Atoms/LoginAtoms'
 import { useRecoilState } from "recoil";
 
-const LoginForm = () => {
+
+
+
+const Loginpage = () => {
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showSignupModal, setShowSignupModal] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -19,29 +22,6 @@ const LoginForm = () => {
 
   const handleSignupSubmit = async (e) => {
     e.preventDefault();
-
-    const newUsername = document.getElementById('newUsername').value;
-    const newPassword = document.getElementById('newPassword').value;
-    const newTel = document.getElementById('newTel').value;
-    const newEmail = document.getElementById('newEmail').value;
-
-    try {
-      const response = await axios.post('/api/signup', {
-        username: newUsername,
-        password: newPassword,
-        tel: newTel,
-        email: newEmail,
-      });
-
-      if (response.status === 200) {
-        setMessage('회원가입 성공!');
-        setShowSignupModal(false); // Close the signup modal after successful signup
-      } else {
-        setMessage('회원가입 실패. 서버 오류가 발생했습니다.');
-      }
-    } catch (error) {
-      setMessage('회원가입 실패. 서버 오류가 발생했습니다.');
-    }
   };
 
   const handleLoginModalClose = () => {
@@ -74,7 +54,7 @@ const LoginForm = () => {
         </button>
       ) : (
         <>
-          <div>
+          <div className="buttons">
           <button type="button" className="login-button" onClick={handleLoginModalOpen}>
             로그인
           </button>
@@ -91,4 +71,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default Loginpage;

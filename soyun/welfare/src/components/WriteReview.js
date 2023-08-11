@@ -52,17 +52,19 @@ const WriteReview = () => {
     
     return(
         <>
+        <form>
         <div className="WriteReviewWindow">
             <div>제목:&nbsp;<input type="text" id="newNotename"></input></div>
             <div>작성자:&nbsp;{username}</div>
             <div>시설명:&nbsp;{welfareName}</div>
-            <div>비밀번호:&nbsp;<input type="password" id="newNotepass"></input></div>
+            <div>비밀번호:&nbsp;<input type="password" id="newNotepass" required /></div>
             <br />
             <div>내용:&nbsp;<input type="text" id="newNote"></input></div>
             <br />
             <input type="file" id="newFile" />
-            <button type="button" onClick={submitControl} id="submitButton">작성</button>
+            <button type="submit" onClick={submitControl} id="submitButton">작성</button>
         </div>
+        </form>
         </>
         
     )

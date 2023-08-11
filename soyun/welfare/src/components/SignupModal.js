@@ -11,6 +11,8 @@ const SignupModal = ({ showModal, closeModal }) => {
   const handleSignupSubmit = async (e) => {
     e.preventDefault();
 
+    // 회원가입을 하는 코드
+
     try {
       const response = await fetch('http://localhost:8080/api/signup', {
         method: 'POST',
@@ -27,12 +29,14 @@ const SignupModal = ({ showModal, closeModal }) => {
 
       if (response.ok) {
         setMessage('회원가입 성공!');
+        var option =  "width = 300, height = 100, top = 100, left = 200, location = no"
+        window.open(`/CreateAccountSuccess/${newUsername}`, "이름", option)
         closeModal();
       } else {
-        setMessage('회원가입 실패. 서버 오류가 발생했습니다.');
+        setMessage('회원가입 실패. 이미 존재하는 아이디입니다.');
       }
     } catch (error) {
-      setMessage('회원가입 실패. 서버 오류가 발생했습니다.');
+      setMessage('회원가입 실패. 이미 존재하는 아이디입니다.');
     }
   };
 

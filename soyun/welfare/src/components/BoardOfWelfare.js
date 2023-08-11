@@ -50,7 +50,7 @@ const BoardOfWelfare = (props) => {
     return (
         <>
         <div className="boardBackground">
-            {welfareName}의 게시글목록
+            <div className="boardBackgroundTitle">{welfareName}의 게시글목록</div>
             <br/><br/>
             {list.length == 0?
             <div>게시글이 없습니다</div>:
@@ -58,9 +58,9 @@ const BoardOfWelfare = (props) => {
               {Array.from(list).map((item, idx) => {
                 return(
                   <>
-                  <div className="boardBackgroundDetail"><a href="#" onClick={()=>{showPost(welfareName, item.seq)}}>{item.notename}&nbsp;-&nbsp; 작성자: &nbsp; {item.username}</a>
-                  &nbsp; <button onClick={() => {updatePost(item.seq)}}>수정</button> 
-                  &nbsp; <button onClick={() => {deletePost(item.seq)}}>삭제</button>
+                  <div className="boardBackgroundDetail"><a href="#" onClick={()=>{showPost(welfareName, item.seq)}}>{item.notename}&nbsp;-&nbsp; 작성자: &nbsp; {item.username}</a>&nbsp;
+                  {username&&<button onClick={() => {updatePost(item.seq)}}>수정</button>} &nbsp;
+                  {username&&<button onClick={() => {deletePost(item.seq)}}>삭제</button>}
 
                   </div>
                   </>

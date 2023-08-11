@@ -30,10 +30,12 @@ const MainFrame = () => {
       <main className="mainBody">
         <header>
           <div className="App">
-            <AppBar position="static">
-              <Toolbar style={{ backgroundColor: "#74A629" }}>
-                <h1 className="mainTitle">노인을 위한 나라 </h1>&nbsp;
-                <Loginpage />
+            <AppBar position="static" className="appbar">
+              <Toolbar style={{ backgroundColor: "#74A629" }} className="toolbar">
+
+                <h1>노인을 위한 나라 </h1>&nbsp;
+                <div className="loginpage"><Loginpage /></div>
+                
               </Toolbar>            
             </AppBar>
             

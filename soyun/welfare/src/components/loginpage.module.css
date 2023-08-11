@@ -44,3 +44,12 @@
     background-color: #0056b3;
   }
   
+
+  .buttons  {
+    margin-right:auto;
+  }
+
+  .loginpage  {
+    display:flex;
+    justify-content: flex-start;
+  }

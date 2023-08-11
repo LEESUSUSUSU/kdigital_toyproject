@@ -7,6 +7,7 @@ import MainFrame from './components/MainFrame';
 import ShowReview from './components/ShowReview';
 import DeletePost from './components/DeletePost';
 import UpdatePost from './components/UpdatePost';
+import CreateAccountSuccess from './components/CreateAccountSuccess'
 
 import './App.css';
 
@@ -28,6 +29,7 @@ function App() {
           <Route path='/ShowReview/:welfareName/:seq' element={<ShowReview />} />
           <Route path='/DeletePost/:seq' element={<DeletePost />} />
           <Route path='/UpdatePost/:seq/:welfareName/:username' element={<UpdatePost />} />
+          <Route path='/CreateAccountSuccess/:newUsername' element={<CreateAccountSuccess />} />
         </Routes> 
     </main>
     </BrowserRouter>
