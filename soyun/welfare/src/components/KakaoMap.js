@@ -62,7 +62,7 @@ function KakaoMap (props) {
               map: map, 
               position: position_temp, 
               title : members[i].sw_name,
-              
+             
   
             });
 

@@ -7,7 +7,8 @@ import MainFrame from './components/MainFrame';
 import ShowReview from './components/ShowReview';
 import DeletePost from './components/DeletePost';
 import UpdatePost from './components/UpdatePost';
-import CreateAccountSuccess from './components/CreateAccountSuccess'
+import CreateAccountSuccess from './components/CreateAccountSuccess';
+
 
 import './App.css';
 

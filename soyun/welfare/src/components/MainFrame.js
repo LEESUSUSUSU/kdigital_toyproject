@@ -9,6 +9,8 @@ import Loginpage from './loginpage';
 import InfoModal from './InfoModal'
 import WriteReview from './WriteReview';
 
+
+
 import './MainFrameCss.css';
 
 
@@ -35,12 +37,13 @@ const MainFrame = () => {
 
                 <h1>노인을 위한 나라 </h1>&nbsp;
                 <div className="loginpage"><Loginpage /></div>
-                
-              </Toolbar>            
+
+              </Toolbar>           
             </AppBar>
-            
           </div>
+           
         </header>
+        
         <div>
           <Main />
         </div>

@@ -4,7 +4,8 @@ import SignupModal from './SignupModal';
 import axios from 'axios';
 import './LoginCss.css';
 import {LoginAtoms} from './Atoms/LoginAtoms'
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
+import {UserInfoAtoms} from './Atoms/UserInfoAtoms';
 
 
 
@@ -15,6 +16,7 @@ const Loginpage = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [message, setMessage] = useState('');
   const [loginstate, setLoginstate] = useRecoilState(LoginAtoms);
+  const username = useRecoilValue(UserInfoAtoms);
 
   const handleLoginModalOpen = () => {
     setShowLoginModal(true);
@@ -30,6 +32,7 @@ const Loginpage = () => {
 
   const handleSignupModalOpen = () => {
     setShowSignupModal(true);
+
   };
 
   const handleSignupModalClose = () => {
@@ -49,9 +52,15 @@ const Loginpage = () => {
   return (
     <div className='loginpage'>
       {loginstate == 1 ? (
+        <>
+        <div className="logout">
         <button type="button" className="logout-button" onClick={handleLogout}>
           로그아웃
         </button>
+        </div>
+
+        </>
+        
       ) : (
         <>
           <div className="buttons">

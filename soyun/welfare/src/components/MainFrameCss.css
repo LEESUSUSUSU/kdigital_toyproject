@@ -28,7 +28,9 @@
   }
 
   .loginpage  {
-    margin-right:auto;
+    margin-left:auto;
+    display:flex;
+    flex-direction:column;
   }
   .App1 {
    
@@ -43,9 +45,10 @@
   /* loginForm.module.css */
   
   .loginpage {
-    display: flex;
-    flex-direction: column; 
-    justify-content: left; 
+   
+    justify-content: left;
+    text-align:right;
+    margin-left:0 auto;
   }
   
   .loginpage form {

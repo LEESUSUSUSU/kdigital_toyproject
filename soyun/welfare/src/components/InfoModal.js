@@ -98,7 +98,11 @@ return (
         }
 
         {loginState == 1 ?
-          (<button className="writeReviewButton" onClick={() => openPopup()}>리뷰 작성</button>
+          (
+          <>
+          
+          {username}님 어서오세요!&nbsp;<button className="writeReviewButton" onClick={() => openPopup()}>리뷰 작성</button>
+          </>
           ):
           (<div className="loginMessage">로그인을 하셔야 리뷰 작성이 가능합니다</div>) 
         }
