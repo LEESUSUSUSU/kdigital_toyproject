@@ -33,10 +33,10 @@ const SignupModal = ({ showModal, closeModal }) => {
         window.open(`/CreateAccountSuccess/${newUsername}`, "이름", option)
         closeModal();
       } else {
-        setMessage('회원가입 실패. 이미 존재하는 아이디입니다.');
+        setMessage('회원가입 실패. 이미 존재하는 아이디입니다1.');
       }
     } catch (error) {
-      setMessage('회원가입 실패. 이미 존재하는 아이디입니다.');
+      setMessage('회원가입 실패. 이미 존재하는 아이디입니다2.');
     }
   };
 
