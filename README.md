@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 
+<<<<<<< HEAD
  
 
 
@@ -7,6 +8,10 @@
 
 ## 프로젝트 설명(목적 설명, 개발 기간)
 > **부산대학교 k - digital 3기** <br/> **개발기간 : 2023.07 ~ 2023.08.17**
+=======
+![screenshot](https://github.com/LEESUSUSUSU/kdigital_toyproject/assets/129818797/a240d5ac-c17a-4779-a522-5dd37997921f)
+# kdigital_toyproject
+>>>>>>> 87adc4b80d1210da85844dafa60c8601910401a4
 
 23-07-24 1일차 공공데이터 자료 수집 & 공공데이터 자료 DB 저장 & 깃 협업 시작 <br/>
 23-07-25 2일차 공공데이터 추가 자료 수집 & 공공데이터 자료 DB 저장 & 웹 기획<br/>
@@ -115,6 +120,7 @@ ToyprojectWelfare-4 (스프링 부트) 이용
                        
 |                         이수연                              |                           양소윤                 |             
 | [GitHub](https://github.com/LEESUSUSUSU?tab=repositories)  | [GitHub](https://github.com/marine-yang-so-yun)  |
+<<<<<<< HEAD
 
 
 
@@ -145,7 +151,7 @@ ToyprojectWelfare-4 (스프링 부트) 이용
 
 감사합니다.
 
-
+![KakaoTalk_20230816_123656558](https://github.com/LEESUSUSUSU/kdigital_toyproject/assets/129818934/c63def08-33bf-406c-b96d-bd2d162abd15)
 
 
 
@@ -160,3 +166,5 @@ ToyprojectWelfare-4 (스프링 부트) 이용
 
 
 
+=======
+>>>>>>> 87adc4b80d1210da85844dafa60c8601910401a4
