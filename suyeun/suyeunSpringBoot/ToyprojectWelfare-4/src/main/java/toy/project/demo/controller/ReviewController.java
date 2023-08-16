@@ -44,38 +44,34 @@ public class ReviewController {
         }
     }
 	
-//	   @PostMapping("/createReview")
-//	   @PreAuthorize("hasRole('ROLE_USER')")
-//	   public ResponseEntity<?> insertReview(
-//	           @RequestParam String username,
-//	           @RequestParam String notename,
-//	           @RequestParam String notePass,
-//	           @RequestParam String note,
-//	           @RequestParam String sw_name
-//	           //@RequestPart("image") MultipartFile image
-//	   ) throws IOException {
-//	       
-//	      
-//	      Review review = reviewService.insertReview(username, notename, notePass, note, sw_name);
-//	      //return ResponseEntity.ok(review);
-//	      return ResponseEntity.ok("OK");
-//	   }
+	
+//	@PostMapping("/createReview")
+//	@PreAuthorize("hasRole('ROLE_USER')")
+//	public ResponseEntity<?> insertReview(
+//	        @RequestParam(required = false) String username,
+//	        @RequestParam(required = false) String notename,
+//	        @RequestParam(required = false) String notePass,
+//	        @RequestParam(required = false) String note,
+//	        @RequestParam(required = false) String sw_name
+//	        //@RequestPart("image") MultipartFile image
+//	) throws IOException {
+//		System.out.println(username + " "+ notename + " " + notePass + " " + note + " " + sw_name);
+//		Review review = reviewService.insertReview(username, notename, notePass, note, sw_name);
+//		//return ResponseEntity.ok(review);
+//		return ResponseEntity.ok("OK");
+//	}
 	
 	
 	@PostMapping("/createReview")
 	@PreAuthorize("hasRole('ROLE_USER')")
-	public Review insertReview(
-	        @RequestParam String username,
-	        @RequestParam String notename,
-	        @RequestPart("image") MultipartFile image,
-	        @RequestParam String notePass,
-	        @RequestParam String note,
-	        @RequestParam String sw_name
-	) throws IOException {
-	    
-	   
-	return reviewService.insertReview(username, notename, image, notePass, note, sw_name);
+	public ResponseEntity<?> insertReview(@RequestBody Review review) throws IOException {
+		System.out.println(review);
+		reviewService.insertReview(review);
+		//return ResponseEntity.ok(review);
+		return ResponseEntity.ok("OK");
 	}
+	
+	
 	
 	
 	@PutMapping("/updateReview")
@@ -83,11 +79,12 @@ public class ReviewController {
 	public Review updateReview(
 	        @RequestParam Integer id,
 	        @RequestParam String notename,
-	        @RequestPart("image") MultipartFile image,
 	        @RequestParam String notePass,
-	        @RequestParam String note
+	        @RequestParam String note,
+	        @RequestParam String sw_name,
+	        @RequestParam String username
 	) throws IOException {
-	    return reviewService.updateReview(id, notename, image, notePass, note);
+	    return reviewService.updateReview(id, notename, notePass, note, sw_name, username);
 	}
 	
 	

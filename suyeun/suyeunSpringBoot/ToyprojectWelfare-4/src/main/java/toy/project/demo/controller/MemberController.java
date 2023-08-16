@@ -33,7 +33,7 @@ public class MemberController {
     @PostMapping("/signup")
     public ResponseEntity<String> signUp(@RequestBody member newMember) {
         try {
-            // Check if the username already exists in the database
+            
             if (memberIdRepository.existsByUsername(newMember.getUsername())) {
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Username already exists.");
             }
@@ -45,36 +45,18 @@ public class MemberController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Signup failed.");
         }
     }
-//
-//    @PostMapping("/login")
-//    public ResponseEntity<String> login(@RequestBody member loginRequest) {
-//        try {
-//        
-//        
-//            member member = memberIdRepository.findByUsername(loginRequest.getUsername());
-//            if (member != null) {
-//            	if (encoder.matches(loginRequest.getPassword(), member.getPassword()))
-//            		return ResponseEntity.ok("Login successful!");
-//            	else 
-//            		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("not matches password");
-//            } else {
-//                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials.");
-//            }
-//        } catch (Exception e) {
-//            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Login failed.");
-//        }
-//    }
+
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestBody member loginRequest) {
         try {
+        
+        
             member member = memberIdRepository.findByUsername(loginRequest.getUsername());
             if (member != null) {
-                if (encoder.matches(loginRequest.getPassword(), member.getPassword())) {
-                    String token = jwtTokenUtil.generateToken(member.getUsername());
-                    return ResponseEntity.ok(token);
-                } else {
-                    return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials.");
-                }
+            	if (encoder.matches(loginRequest.getPassword(), member.getPassword()))
+            		return ResponseEntity.ok("Login successful!");
+            	else 
+            		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("not matches password");
             } else {
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials.");
             }
@@ -82,4 +64,5 @@ public class MemberController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Login failed.");
         }
     }
+
 }

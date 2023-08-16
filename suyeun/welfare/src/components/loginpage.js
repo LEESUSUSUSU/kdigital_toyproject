@@ -2,13 +2,16 @@ import React, { useState } from 'react';
 import LoginModal from './LoginModal';
 import SignupModal from './SignupModal';
 import axios from 'axios';
-
+import './LoginCss.css';
+import {LoginAtoms} from './Atoms/LoginAtoms'
+import { useRecoilState } from "recoil";
 
 const LoginForm = () => {
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showSignupModal, setShowSignupModal] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [message, setMessage] = useState('');
+  const [loginstate, setLoginstate] = useRecoilState(LoginAtoms);
 
   const handleLoginModalOpen = () => {
     setShowLoginModal(true);
@@ -60,22 +63,25 @@ const LoginForm = () => {
 
   const handleLogout = () => {
     setIsLoggedIn(false);
+    setLoginstate(0);
   };
 
   return (
     <div className='loginpage'>
-      {isLoggedIn ? (
+      {loginstate == 1 ? (
         <button type="button" className="logout-button" onClick={handleLogout}>
           로그아웃
         </button>
       ) : (
         <>
+          <div>
           <button type="button" className="login-button" onClick={handleLoginModalOpen}>
             로그인
           </button>
           <button type="button" className="signup-button" onClick={handleSignupModalOpen}>
             회원가입
           </button>
+          </div>
         </>
       )}
       

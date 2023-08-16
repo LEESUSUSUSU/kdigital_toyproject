@@ -10,7 +10,6 @@ const LockIconComponent = () => {
 
   const handleLoginClick = () => {
     // Your login logic here (if needed)
-
     // Redirect to the login page
     navigate('/login');
   };

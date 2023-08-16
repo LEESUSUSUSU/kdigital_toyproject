@@ -39,7 +39,7 @@ function KakaoMap (props) {
         for (var i = 0; i < positions.length; i++)  {
           
           
-          var position_temp = new kakao.maps.LatLng(memberList[i].mb_latitude, memberList[i].mb_longitude)
+          var position_temp = new kakao.maps.LatLng(memberList[i].latitude, memberList[i].longitude)
           
 
           var marker = new kakao.maps.Marker({

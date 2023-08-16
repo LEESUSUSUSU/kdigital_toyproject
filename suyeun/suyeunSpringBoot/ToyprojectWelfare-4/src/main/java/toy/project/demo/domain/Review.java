@@ -32,9 +32,9 @@ public class Review {
     private String notename;
     private String notePass;
     private String sw_name;
-    @Lob
-    @Column(columnDefinition = "MEDIUMBLOB")
-    private byte[] image;
+//    @Lob
+//    @Column(columnDefinition = "MEDIUMBLOB")
+//    private byte[] image;
     private String note;
  
 

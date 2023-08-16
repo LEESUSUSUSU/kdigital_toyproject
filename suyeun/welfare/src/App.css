@@ -1,7 +1,11 @@
+
+html{
+  background-color:rgb(171, 206, 162);
+}
+
 body {
-  background-image: url(./icon/—Pngtree—green\ backgrounds\ wallpapers\ photos\ graphics_1444977.jpg);
+  background-color:rgb(171, 206, 162);
   background-repeat: no-repeat;
-  /* background-position: top center; */
   background-size: cover;
   background-attachment: fixed;
 }
@@ -33,6 +37,8 @@ body {
   gap: 5px; /* Add some spacing between the buttons */
   justify-content: center; /* Center the form elements horizontally */
 }
+
+
 
 
 .loginpage h5{

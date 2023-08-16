@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import {LoginAtoms} from './Atoms/LoginAtoms'
+import { useRecoilState } from "recoil";
+import {UserInfoAtoms} from './Atoms/UserInfoAtoms';
 
 const LoginModal = ({ showModal, closeModal }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
+  const [loginState, setLoginState] = useRecoilState(LoginAtoms);
+  const [userInfo, setUserInfo] = useRecoilState(UserInfoAtoms);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -21,10 +26,16 @@ const LoginModal = ({ showModal, closeModal }) => {
         }),
       });
 
+
+
+      //로그인이 완료되면 할 작업
+
       if (response.ok) {
         setMessage(`Hello, ${username} 어서오세요!`);
+        setLoginState(1);
+        setUserInfo(username);
+        console.log("loginState:", loginState)
         closeModal();
-        // Do something after successful login (e.g., redirect to a new page)
       } else {
         setMessage('로그인 실패. 올바른 정보를 입력하세요.');
       }
@@ -41,7 +52,8 @@ const LoginModal = ({ showModal, closeModal }) => {
             &times;
           </span>
           <form onSubmit={handleLogin}>
-            <h3>로그인</h3>
+            <div>
+            &nbsp;&nbsp;/&nbsp;로그인: &nbsp;&nbsp;
             <label htmlFor="username">사용자 이름</label>
             <input
               type="text"
@@ -59,6 +71,7 @@ const LoginModal = ({ showModal, closeModal }) => {
               required
             />
             <button type="submit" className="login-button">로그인</button>
+            </div>
           </form>
           <p>{message}</p>
         </div>

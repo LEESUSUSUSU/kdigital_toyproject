@@ -1,14 +1,15 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import React, { useState } from 'react';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-<<<<<<< HEAD
-import KakaMap from './components/KakaMap';
-=======
-import KakaoMap from './components/KakaoMap';
->>>>>>> 958e4e8abb76f2cca420f218fa24bc064ce0c580
-import Main from './components/Main';
-import Loginpage from './components/loginpage';
+import {RecoilRoot} from 'recoil';
+
+import WriteReview from './components/WriteReview';
+import MainFrame from './components/MainFrame';
+import ShowReview from './components/ShowReview';
+import DeletePost from './components/DeletePost';
+import UpdatePost from './components/UpdatePost';
+
 import './App.css';
+
 
 function App() {
   const [searchText, setSearchText] = useState('');
@@ -18,37 +19,20 @@ function App() {
   };
 
   return (
-    <main>
-      <header>
-        <div className="App">
-          <AppBar position="static">
-            <Toolbar style={{ backgroundColor: "#74A629" }}>
-              <h1>노인을 위한 나라</h1>
-            </Toolbar>
-          </AppBar>
-        </div>
-      </header>
-      <div>
-        <Main />
-        <Loginpage />
-      </div>
-      <div className="App1">
-<<<<<<< HEAD
-
-
-        <KakaMap/>
-=======
-        
-
-        <KakaoMap/>
->>>>>>> 958e4e8abb76f2cca420f218fa24bc064ce0c580
-      </div>
-      <footer>
-        <div>
-          <h2>바닥</h2>
-        </div>
-      </footer>
+    <RecoilRoot>
+    <BrowserRouter>
+    <main className="container"> 
+        <Routes>
+          <Route path='/' element={<MainFrame />} />
+          <Route path='/WriteReview/:name/:username' element={<WriteReview />} />
+          <Route path='/ShowReview/:welfareName/:seq' element={<ShowReview />} />
+          <Route path='/DeletePost/:seq' element={<DeletePost />} />
+          <Route path='/UpdatePost/:seq/:welfareName/:username' element={<UpdatePost />} />
+        </Routes> 
     </main>
+    </BrowserRouter>
+    </RecoilRoot>
+    
   );
 }
 

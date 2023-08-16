@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
+import {LoginAtoms} from './Atoms/LoginAtoms'
+import { useRecoilState } from "recoil";
 
 const LoginForm = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
   const [showSignupModal, setShowSignupModal] = useState(false);
+  const [loginstate, setLoginstate] = useRecoilState(LoginAtoms);
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:8080/api/login', {
+      const response = await fetch('http://10.125.121.202/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -23,7 +27,7 @@ const LoginForm = () => {
 
       if (response.ok) {
         setMessage('로그인 성공!');
-        // Do something after successful login (e.g., redirect to a new page)
+        
       } else {
         setMessage('로그인 실패. 올바른 정보를 입력하세요.');
       }
@@ -92,13 +96,15 @@ const LoginForm = () => {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button type="submit" className="login-button">로그인</button>
+        {loginstate == 0?
+        (<button type="submit" className="login-button">로그인</button>)
+        :(<button type="submit" className="logout-button">로그아웃</button>)}
         <button type="button" className="signup-button" onClick={handleSignupModalOpen}>
           회원가입
         </button>
       </form>
       <p>{message}</p>
-
+      
       {showSignupModal && (
         <div className="modal">
           <div className="modal-content">
