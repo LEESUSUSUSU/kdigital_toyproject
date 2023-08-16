@@ -1,4 +1,6 @@
 <<<<<<< HEAD
+
+![screenshot](https://github.com/LEESUSUSUSU/kdigital_toyproject/assets/129818797/a240d5ac-c17a-4779-a522-5dd37997921f)
 # kdigital_toyproject
 
 23-07-24 1일차 공공데이터 자료 수집 & 공공데이터 자료 DB 저장 & 깃 협업 시작 <br/>
