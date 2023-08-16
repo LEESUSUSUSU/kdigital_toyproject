@@ -106,7 +106,7 @@ ToyprojectWelfare-4 (스프링 부트) 이용
                        
 |                         이수연                              |                           양소윤                 |             
 | [GitHub](https://github.com/LEESUSUSUSU?tab=repositories)  | [GitHub](https://github.com/marine-yang-so-yun)  |
-<<<<<<< HEAD
+
 
 
 
