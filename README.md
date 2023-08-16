@@ -9,7 +9,6 @@
 ## 프로젝트 설명(목적 설명, 개발 기간)
 > **부산대학교 k - digital 3기** <br/> **개발기간 : 2023.07 ~ 2023.08.17**
 =======
-![screenshot](https://github.com/LEESUSUSUSU/kdigital_toyproject/assets/129818797/a240d5ac-c17a-4779-a522-5dd37997921f)
 # kdigital_toyproject
 >>>>>>> 87adc4b80d1210da85844dafa60c8601910401a4
 
