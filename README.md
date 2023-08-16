@@ -69,7 +69,6 @@ ToyprojectWelfare-4 (스프링 부트) 이용
 ## 7. 화면 구성 (개발 화면에 대한 내용) - FE 
 
 ## 8. 기능 구현 - BE
-
 - JWT 로그인 기능 (업데이트 중)
 - 회원가입 기능
 - Review게시판, 수정, 삭제 기능
@@ -102,11 +101,6 @@ ToyprojectWelfare-4 (스프링 부트) 이용
 1.TIL <br/>
 2.협업을 위한 툴 (excalidraw > 그림 파일 협업 가능)  <br/>
 
-
-
-### img screen
-![제목 없음-2023-07-25-1721](https://github.com/LEESUSUSUSU/kdigital_toyproject/assets/129818934/78900faa-e252-4dbc-b76e-4a8ee0b5553a)
->>>>>>> b4ee69f77f7d0af3368b53b429d84315dac07419
 
 ## 3. 팀원 
                        
