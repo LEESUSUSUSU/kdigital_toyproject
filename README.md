@@ -1,17 +1,9 @@
-<<<<<<< HEAD
 
-<<<<<<< HEAD
- 
-
-
-# __K3MiniProject - 부산 요양병원 및 보지관 위치 확인 
+# __K3MiniProject - 부산 요양병원 및 복지관 위치 확인 
 
 ## 프로젝트 설명(목적 설명, 개발 기간)
 > **부산대학교 k - digital 3기** <br/> **개발기간 : 2023.07 ~ 2023.08.17**
-=======
-![screenshot](https://github.com/LEESUSUSUSU/kdigital_toyproject/assets/129818797/a240d5ac-c17a-4779-a522-5dd37997921f)
-# kdigital_toyproject
->>>>>>> 87adc4b80d1210da85844dafa60c8601910401a4
+
 
 23-07-24 1일차 공공데이터 자료 수집 & 공공데이터 자료 DB 저장 & 깃 협업 시작 <br/>
 23-07-25 2일차 공공데이터 추가 자료 수집 & 공공데이터 자료 DB 저장 & 웹 기획<br/>
@@ -32,7 +24,7 @@
 
 
 
-ToyprojectWelfare-4 (스프링 부트) 이용 
+
 
 
 ## 3. 목차 
@@ -48,7 +40,7 @@ ToyprojectWelfare-4 (스프링 부트) 이용
 ## 4. 프로젝트 소개
 
 노인이 늘어가는 추세에  노인에게 맞춰진 웹 홈페이지 가 없는 요즘  
-노인을 위한 직관적인 웹사이트를 한 번 만들어 보는것이 좋겠다는 생각에 부산을 기준으로 만들어 보았다.
+노인을 위한 직관적인 웹사이트를 한 번 만들어 보는것이 좋겠다는 생각에 부산을 기준으로 만들어 보았습니다.
 
 
 ## 5. 시작가이드(요구사항,설치 및 실행)
@@ -77,7 +69,6 @@ ToyprojectWelfare-4 (스프링 부트) 이용
 ## 7. 화면 구성 (개발 화면에 대한 내용) - FE 
 
 ## 8. 기능 구현 - BE
-
 - JWT 로그인 기능 (업데이트 중)
 - 회원가입 기능
 - Review게시판, 수정, 삭제 기능
@@ -111,16 +102,11 @@ ToyprojectWelfare-4 (스프링 부트) 이용
 2.협업을 위한 툴 (excalidraw > 그림 파일 협업 가능)  <br/>
 
 
-
-### img screen
-![제목 없음-2023-07-25-1721](https://github.com/LEESUSUSUSU/kdigital_toyproject/assets/129818934/78900faa-e252-4dbc-b76e-4a8ee0b5553a)
->>>>>>> b4ee69f77f7d0af3368b53b429d84315dac07419
-
 ## 3. 팀원 
                        
 |                         이수연                              |                           양소윤                 |             
 | [GitHub](https://github.com/LEESUSUSUSU?tab=repositories)  | [GitHub](https://github.com/marine-yang-so-yun)  |
-<<<<<<< HEAD
+
 
 
 
@@ -167,4 +153,4 @@ ToyprojectWelfare-4 (스프링 부트) 이용
 
 
 =======
->>>>>>> 87adc4b80d1210da85844dafa60c8601910401a4
+
