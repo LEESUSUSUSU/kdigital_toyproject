@@ -1,0 +1,17 @@
+
+.boardBackground    {
+    background-color: whitesmoke;
+    height:400px;
+    margin:15px;
+    border-radius: 20px;
+    font-size:17px;
+
+}
+
+.boardBackgroundDetail:hover    {
+    background-color:rgb(171, 206, 162)
+}
+
+.boardBackgroundTitle   {
+    text-align:center;
+}

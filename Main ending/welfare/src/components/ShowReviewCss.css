@@ -1,0 +1,20 @@
+.showReview {
+    background-color:rgb(171, 206, 162);
+    font-family:"한컴산뜻돋움";
+}
+
+.showReviewElement  {
+    margin:5px;
+}
+
+.showReviewDetail{
+    background-color:rgb(217, 239, 212);
+    border: 1px dashed rgb(129, 182, 116);
+    height:500px;
+    padding:10px;
+    margin:10px;
+}
+
+.closeButton    {
+    margin-left:530px;
+}

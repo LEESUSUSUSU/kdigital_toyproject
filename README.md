@@ -137,20 +137,20 @@
 
 감사합니다.
 
-![KakaoTalk_20230816_123656558](https://github.com/LEESUSUSUSU/kdigital_toyproject/assets/129818934/c63def08-33bf-406c-b96d-bd2d162abd15)
-
-
-
-
-
-
-
- 
-
 
 
 
 
 
 =======
+
+
+
+| DB 데이터   |  DB 데이터    |
+| :-------------------------------------------: | :------------: |
+|  <img width="450" height="350"  src="https://github.com/LEESUSUSUSU/kdigital_toyproject/assets/129818934/97172e32-bb29-434a-8b59-0dc8f4cbe7f9"/> |  <img width="450" height="350" src="https://github.com/LEESUSUSUSU/kdigital_toyproject/assets/129818934/b092adb7-6610-43a3-b286-04559ee67472"/>|  
+
+| DB 데이터  |  메인 페이지   |  
+| :-------------------------------------------: | :------------: |
+| <img width="450" height="350" src="https://github.com/LEESUSUSUSU/kdigital_toyproject/assets/129818934/0ad924e0-d327-456b-99dc-d5130cd08317"/>   |  <img width="450" height="350" src="https://github.com/LEESUSUSUSU/kdigital_toyproject/assets/129818934/c63def08-33bf-406c-b96d-bd2d162abd15"/>|
 
