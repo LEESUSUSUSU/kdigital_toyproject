@@ -63,7 +63,7 @@
 ![SpringBoot](https://img.shields.io/badge/spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
 
 + Development Environment: Visual Studio Code, Git, GitHub
-+ Development Stack: React, BootStrap, Spring Boot 
++ Development Stack: React, BootStrap, Spring Boot ,mySOL
 
 
 ## 7. 화면 구성 (개발 화면에 대한 내용) - FE 
